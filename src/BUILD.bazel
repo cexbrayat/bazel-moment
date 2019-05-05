@@ -33,6 +33,7 @@ ng_module(
         "@npm//@angular/router",
         "@npm//@types",
         "@npm//rxjs",
+        "@npm//moment",
     ],
 )
 
@@ -88,9 +89,13 @@ ts_devserver(
     ],
     data = [
         "favicon.ico",
+        "@npm//node_modules/moment:min/moment.min.js",
     ],
     index_html = "index.html",
-    deps = [":src"],
+    deps = [
+      ":require.config.js",
+      ":src",
+    ],
 )
 
 ts_library(

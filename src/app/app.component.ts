@@ -7,4 +7,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'bazel-project';
+  date = '2019-05-05';
 }
