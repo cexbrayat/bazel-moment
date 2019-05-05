@@ -127,6 +127,7 @@ ts_web_test_suite(
     name = "test",
     srcs = [
         "@npm//node_modules/tslib:tslib.js",
+        "@npm//node_modules/moment:min/moment.min.js",
     ],
     runtime_deps = [
         ":initialize_testbed",
@@ -139,7 +140,17 @@ ts_web_test_suite(
     browsers = [
         "@io_bazel_rules_webtesting//browsers:chromium-local",
     ],
+    static_files = [
+        "@npm//node_modules/moment:min/moment.min.js",
+    ],
+    web_test_data = [
+        "@npm//node_modules/moment:min/moment.min.js",
+    ],
+    data = [
+        "@npm//node_modules/moment:min/moment.min.js",
+    ],
     deps = [
+        ":require.config.js",
         ":rxjs_umd_modules",
         ":test_lib",
         "@npm//karma-jasmine",

@@ -1,5 +1,6 @@
 import { FromNowPipe } from './from-now.pipe';
-import * as moment from 'moment';
+import * as moment_ from 'moment';
+const moment = moment_;
 
 describe('FromNowPipe', () => {
 
